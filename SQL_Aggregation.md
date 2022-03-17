@@ -112,7 +112,7 @@ The STATION table is described as follows:
 where LAT_N is the northern latitude and LONG_W is the western longitude.
 **Solution**  
 ``` sql
-	SELECT (ROUND(SUM(lat_n), 2) || ' ' || ROUND(SUM(long_w), 2)) FROM station;
+	select round(sum(lat_n), 2), round(sum(long_w), 2) from station;
 ```
   
   
