@@ -93,7 +93,7 @@ The Employee table containing employee data for a company is described as follow
 where employee_id is an employee's ID number, name is their name, months is the total number of months they've been working for the company, and salary is the their monthly salary. 
 **Solution** 
 ``` sql 
-	SELECT * FROM (SELECT  months*salary, COUNT(*) FROM employee GROUP BY months*salary ORDER BY months*salary DESC) WHERE ROWNUM = 1;
+	select max(months * salary), count(months * salary) from Employee where (months * salary) = (select max(months * salary) from Employee);
 ```
   
   
