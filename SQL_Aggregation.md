@@ -209,3 +209,17 @@ Write a query to print the pattern P(20).
  ```sql
  SELECT REPEAT('* ', @NUMBER := @NUMBER - 1) FROM information_schema.tables, (SELECT @NUMBER:=21) t LIMIT 20
  ```
+ ### Draw the Triangle 2
+ P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+ <pre><code>
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+</code></pre>
+ Write a query to print the pattern P(20).
+ ```sql
+ set @row := 0;
+select repeat('* ', @row := @row + 1) from information_schema.tables where @row < 20
+```
