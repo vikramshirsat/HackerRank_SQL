@@ -198,8 +198,14 @@ Query the [Euclidean Distance](https://en.wikipedia.org/wiki/Euclidean_distance)
 ```
  ### Draw the Triangle 1
  P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
- https://www.hackerrank.com/challenges/draw-the-triangle-1/problem?isFullScreen=true#:~:text=*%20*%20*%20*%20*%20%0A*%20*%20*%20*%20%0A*%20*%20*-,*%20*,-*
- Write a query to print the pattern P(20).
+<pre><code>
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+</code></pre>
+Write a query to print the pattern P(20).
  ```sql
  SELECT REPEAT('* ', @NUMBER := @NUMBER - 1) FROM information_schema.tables, (SELECT @NUMBER:=21) t LIMIT 20
  ```
